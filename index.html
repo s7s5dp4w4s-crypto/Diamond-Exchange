@@ -1,705 +1,964 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#05070a">
-<meta name="description" content="Diamond Exchange — $DDE. Fair token. Fair launch. Community first.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Diamond Exchange — $DDE</title>
 
+<meta name="description" content="Diamond Exchange ($DDE) — Fair Token. Fair Launch. Community First.">
+<meta name="theme-color" content="#050608">
+
 <style>
-:root{
-  --bg:#05070a;
-  --bg2:#080b10;
-  --panel:rgba(14,18,25,.78);
-  --panel2:rgba(18,23,32,.92);
-  --white:#f7f8fb;
-  --text:#b9c0cb;
-  --muted:#737c89;
-  --line:rgba(255,255,255,.09);
-  --violet:#9945ff;
-  --blue:#00c2ff;
-  --mint:#14f195;
-  --pink:#ff4ecd;
+:root {
+  --bg: #050608;
+  --bg2: #080b10;
+  --panel: rgba(13,17,23,.82);
+  --panel2: rgba(255,255,255,.035);
+  --white: #f7f8fa;
+  --text: #b9c0ca;
+  --muted: #7f8793;
+  --line: rgba(255,255,255,.09);
+
+  --violet: #9945ff;
+  --blue: #00c2ff;
+  --mint: #14f195;
+
+  --gradient: linear-gradient(
+    105deg,
+    #ffffff 0%,
+    #dfe5ed 34%,
+    #9945ff 63%,
+    #00c2ff 82%,
+    #14f195 100%
+  );
 }
 
-*{
-  box-sizing:border-box;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html{
-  scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-  margin:0;
-  color:var(--white);
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* BACKGROUND */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
   background:
-    radial-gradient(circle at 85% 8%,rgba(153,69,255,.18),transparent 30%),
-    radial-gradient(circle at 10% 25%,rgba(20,241,149,.10),transparent 28%),
-    linear-gradient(180deg,#05070a 0%,#070a0f 50%,#05070a 100%);
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  line-height:1.6;
-  overflow-x:hidden;
+    radial-gradient(
+      650px 500px at 80% 5%,
+      rgba(153,69,255,.20),
+      transparent 65%
+    ),
+    radial-gradient(
+      600px 500px at 10% 25%,
+      rgba(20,241,149,.11),
+      transparent 65%
+    ),
+    radial-gradient(
+      700px 600px at 55% 80%,
+      rgba(0,194,255,.08),
+      transparent 70%
+    );
 }
 
-body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  opacity:.18;
-  z-index:-1;
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .18;
+
   background-image:
-    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-  background-size:52px 52px;
-  mask-image:linear-gradient(to bottom,#000,transparent 85%);
+    linear-gradient(
+      rgba(255,255,255,.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 50px 50px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 80%
+    );
 }
 
-a{
-  color:inherit;
-  text-decoration:none;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.container{
-  width:min(1180px,calc(100% - 40px));
-  margin:auto;
+.container {
+  width: min(1180px, calc(100% - 44px));
+  margin: auto;
 }
 
-/* NAV */
+/* NAVIGATION */
 
-nav{
-  height:82px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  border-bottom:1px solid var(--line);
+nav {
+  height: 84px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--line);
 }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-weight:900;
-  letter-spacing:.12em;
-  font-size:.86rem;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  font-size: .88rem;
+  font-weight: 900;
+  letter-spacing: .14em;
 }
 
-.logo-mark{
-  width:38px;
-  height:38px;
-  display:grid;
-  place-items:center;
-  border-radius:11px;
-  background:linear-gradient(135deg,var(--violet),var(--blue),var(--mint));
-  box-shadow:0 0 35px rgba(20,241,149,.16);
-  position:relative;
+.logo-mark {
+  width: 39px;
+  height: 39px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--violet),
+      var(--blue),
+      var(--mint)
+    );
+
+  box-shadow:
+    0 0 35px rgba(20,241,149,.16);
 }
 
-.logo-mark:before{
-  content:"";
-  width:18px;
-  height:18px;
-  border:2px solid #05070a;
-  transform:rotate(45deg);
-  position:absolute;
+.logo-diamond {
+  width: 21px;
+  height: 21px;
+
+  border: 2px solid #050608;
+
+  transform: rotate(45deg);
+
+  display: grid;
+  place-items: center;
 }
 
-.logo-mark span{
-  font-size:8px;
-  font-weight:950;
-  letter-spacing:-.1em;
-  color:#05070a;
-  z-index:2;
+.logo-diamond span {
+  transform: rotate(-45deg);
+
+  font-size: 7px;
+  font-weight: 1000;
+  letter-spacing: -.1em;
+
+  color: #050608;
 }
 
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:30px;
-  color:#8d96a4;
-  font-size:.88rem;
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  color: #929aa6;
+  font-size: .9rem;
 }
 
-.nav-links a{
-  transition:.2s ease;
+.nav-links a {
+  transition: .2s ease;
 }
 
-.nav-links a:hover{
-  color:#fff;
-}
-
-.nav-button{
-  padding:10px 16px;
-  border-radius:9px;
-  background:linear-gradient(100deg,var(--violet),var(--blue),var(--mint));
-  color:#05070a;
-  font-weight:850;
+.nav-links a:hover {
+  color: white;
 }
 
 /* HERO */
 
-.hero{
-  min-height:calc(100vh - 82px);
-  display:grid;
-  grid-template-columns:1.08fr .92fr;
-  align-items:center;
-  gap:60px;
-  padding:85px 0 105px;
+.hero {
+  min-height: 790px;
+
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+
+  gap: 55px;
 }
 
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:9px;
-  padding:8px 13px;
-  border:1px solid rgba(20,241,149,.25);
-  border-radius:999px;
-  background:rgba(20,241,149,.055);
-  color:#aaf5d6;
-  font-size:.72rem;
-  font-weight:850;
-  letter-spacing:.14em;
-  text-transform:uppercase;
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 8px 13px;
+
+  border: 1px solid rgba(20,241,149,.22);
+  border-radius: 999px;
+
+  background: rgba(20,241,149,.055);
+
+  color: #aaf5d4;
+
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .15em;
+  text-transform: uppercase;
 }
 
-.dot{
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:var(--mint);
-  box-shadow:0 0 14px var(--mint);
-}
+.badge-dot {
+  width: 7px;
+  height: 7px;
 
-h1{
-  margin:25px 0 24px;
-  font-size:clamp(4rem,8.5vw,7.8rem);
-  line-height:.82;
-  letter-spacing:-.075em;
-  font-weight:950;
-}
+  border-radius: 50%;
 
-.gradient{
-  background:linear-gradient(
-    105deg,
-    #fff 8%,
-    #e9edf3 38%,
-    #a96aff 65%,
-    #00c2ff 82%,
-    #14f195 100%
-  );
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
+  background: var(--mint);
 
-.hero-copy{
-  max-width:670px;
-}
-
-.hero-copy h2{
-  margin:0 0 13px;
-  font-size:clamp(1.25rem,2.2vw,1.55rem);
-  letter-spacing:-.02em;
-}
-
-.hero-copy p{
-  margin:0;
-  color:#9da6b3;
-  font-size:clamp(1.05rem,2vw,1.25rem);
-  line-height:1.75;
-}
-
-.actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:31px;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:52px;
-  padding:0 21px;
-  border-radius:11px;
-  border:1px solid var(--line);
-  font-weight:850;
-  transition:.2s ease;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
-}
-
-.btn-primary{
-  color:#05070a;
-  border:0;
-  background:linear-gradient(100deg,var(--violet),var(--blue),var(--mint));
-  box-shadow:0 12px 40px rgba(153,69,255,.16);
-}
-
-.btn-secondary{
-  background:rgba(255,255,255,.035);
-  color:#fff;
-}
-
-.hero-stats{
-  display:flex;
-  flex-wrap:wrap;
-  gap:35px;
-  margin-top:42px;
-}
-
-.stat-label{
-  display:block;
-  margin-bottom:3px;
-  color:#6f7885;
-  font-size:.69rem;
-  letter-spacing:.15em;
-  text-transform:uppercase;
-}
-
-.stat-value{
-  font-size:1rem;
-  font-weight:800;
-}
-
-/* DIAMOND */
-
-.visual{
-  min-height:510px;
-  display:grid;
-  place-items:center;
-  position:relative;
-}
-
-.glow{
-  position:absolute;
-  width:400px;
-  height:400px;
-  border-radius:50%;
-  background:
-    radial-gradient(circle,rgba(153,69,255,.25),rgba(20,241,149,.08) 45%,transparent 70%);
-  filter:blur(28px);
-}
-
-.diamond{
-  width:340px;
-  height:340px;
-  transform:rotate(45deg);
-  border-radius:38px;
-  padding:2px;
-  background:linear-gradient(135deg,var(--violet),var(--blue),var(--mint));
   box-shadow:
-    0 0 70px rgba(153,69,255,.22),
-    0 0 110px rgba(20,241,149,.08);
-  position:relative;
+    0 0 14px var(--mint);
 }
 
-.diamond-inner{
-  width:100%;
-  height:100%;
-  border-radius:36px;
+.hero h1 {
+  margin: 27px 0 25px;
+
+  font-size: clamp(
+    4rem,
+    8.5vw,
+    7.7rem
+  );
+
+  line-height: .82;
+
+  letter-spacing: -.075em;
+
+  font-weight: 950;
+}
+
+.gradient-text {
+  background: var(--gradient);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.hero-subtitle {
+  max-width: 650px;
+
+  color: var(--text);
+
+  font-size: clamp(
+    1.05rem,
+    2vw,
+    1.3rem
+  );
+}
+
+.hero-subtitle strong {
+  color: white;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-top: 31px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 50px;
+
+  padding: 0 21px;
+
+  border-radius: 11px;
+
+  font-weight: 850;
+
+  border: 1px solid var(--line);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  color: #050608;
+
+  border: 0;
+
   background:
-    radial-gradient(circle at 30% 25%,rgba(153,69,255,.15),transparent 35%),
-    linear-gradient(145deg,#10151c,#05070a 70%);
-  display:grid;
-  place-items:center;
-  position:relative;
-  overflow:hidden;
+    linear-gradient(
+      100deg,
+      var(--violet),
+      var(--blue),
+      var(--mint)
+    );
+
+  box-shadow:
+    0 12px 40px rgba(153,69,255,.18);
 }
 
-.diamond-inner:after{
-  content:"";
-  position:absolute;
-  width:180%;
-  height:2px;
-  background:linear-gradient(90deg,transparent,var(--mint),transparent);
-  transform:rotate(-45deg);
-  opacity:.55;
+.button-secondary {
+  background: rgba(255,255,255,.035);
+  color: white;
 }
 
-.dde{
-  transform:rotate(-45deg);
-  font-size:82px;
-  font-weight:950;
-  letter-spacing:-.12em;
-  background:linear-gradient(120deg,#fff,#cbd2dc 50%,var(--mint));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-  z-index:2;
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 38px;
+
+  margin-top: 38px;
 }
 
-.diamond-caption{
-  position:absolute;
-  bottom:28px;
-  right:20px;
-  transform:rotate(-45deg);
-  color:#737c89;
-  font-size:.62rem;
-  letter-spacing:.16em;
-  text-transform:uppercase;
+.stat-label {
+  color: #707884;
+
+  font-size: .68rem;
+  letter-spacing: .15em;
+
+  text-transform: uppercase;
+}
+
+.stat-value {
+  margin-top: 2px;
+
+  color: white;
+
+  font-size: 1rem;
+  font-weight: 750;
+}
+
+/* DIAMOND VISUAL */
+
+.visual {
+  min-height: 510px;
+
+  display: grid;
+  place-items: center;
+
+  position: relative;
+}
+
+.glow {
+  position: absolute;
+
+  width: 390px;
+  height: 390px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(153,69,255,.32),
+      rgba(0,194,255,.15),
+      rgba(20,241,149,.12),
+      transparent 68%
+    );
+
+  filter: blur(38px);
+}
+
+.diamond {
+  width: 330px;
+  height: 330px;
+
+  position: relative;
+
+  transform: rotate(45deg);
+
+  border-radius: 38px;
+
+  padding: 2px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--violet),
+      var(--blue) 48%,
+      var(--mint)
+    );
+
+  box-shadow:
+    0 0 90px rgba(153,69,255,.23);
+}
+
+.diamond-inner {
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 36px;
+
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(153,69,255,.13),
+      transparent 35%
+    ),
+    #050608;
+}
+
+.diamond-inner::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180%;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--mint),
+      transparent
+    );
+
+  transform: rotate(-45deg);
+
+  opacity: .7;
+}
+
+.dde {
+  transform: rotate(-45deg);
+
+  font-size: 76px;
+
+  font-weight: 950;
+
+  letter-spacing: -.12em;
+
+  background:
+    linear-gradient(
+      120deg,
+      white,
+      #c4ccd6 50%,
+      var(--mint)
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.diamond-label {
+  position: absolute;
+
+  right: 16px;
+  bottom: 17px;
+
+  transform: rotate(-45deg);
+
+  color: #737c88;
+
+  font-size: .63rem;
+
+  letter-spacing: .15em;
+
+  text-transform: uppercase;
 }
 
 /* SECTIONS */
 
-.section{
-  padding:105px 0;
-  border-top:1px solid var(--line);
+.section {
+  padding: 110px 0;
+
+  border-top: 1px solid var(--line);
 }
 
-.section-heading{
-  max-width:760px;
+.section-heading {
+  max-width: 800px;
 }
 
-.eyebrow{
-  color:var(--mint);
-  font-size:.7rem;
-  font-weight:850;
-  letter-spacing:.17em;
-  text-transform:uppercase;
+.section h2 {
+  font-size: clamp(
+    2.5rem,
+    5vw,
+    4.2rem
+  );
+
+  line-height: .95;
+
+  letter-spacing: -.06em;
+
+  margin-bottom: 16px;
 }
 
-h2{
-  margin:12px 0 15px;
-  font-size:clamp(2.4rem,5vw,4.3rem);
-  line-height:.95;
-  letter-spacing:-.06em;
-}
+.lead {
+  max-width: 780px;
 
-.lead{
-  margin:0;
-  color:#919aa7;
-  font-size:1.06rem;
-  line-height:1.75;
+  color: #969eaa;
+
+  font-size: 1.05rem;
 }
 
 /* CARDS */
 
-.cards{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:14px;
-  margin-top:38px;
+.cards-4 {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 14px;
+
+  margin-top: 40px;
 }
 
-.card{
-  padding:25px;
-  border:1px solid var(--line);
-  border-radius:17px;
+.card {
+  padding: 25px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 17px;
+
   background:
-    linear-gradient(145deg,rgba(17,22,29,.92),rgba(8,11,15,.92));
-  box-shadow:inset 0 1px rgba(255,255,255,.035);
+    linear-gradient(
+      145deg,
+      rgba(17,21,28,.92),
+      rgba(7,9,12,.92)
+    );
+
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.035);
 }
 
-.card-number{
-  font-size:2.5rem;
-  line-height:1;
-  font-weight:950;
-  letter-spacing:-.06em;
-  background:linear-gradient(90deg,#fff,#9fe8cf);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
+.number {
+  font-size: 2.55rem;
+
+  line-height: 1;
+
+  font-weight: 950;
+
+  letter-spacing: -.06em;
+
+  background:
+    linear-gradient(
+      90deg,
+      white,
+      #9fe8cf
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
 }
 
-.card-label{
-  margin-top:8px;
-  color:#7f8895;
+.muted {
+  color: var(--muted);
 }
 
-.feature-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-  margin-top:35px;
+/* FEATURES */
+
+.features {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 15px;
+
+  margin-top: 35px;
 }
 
-.feature-card{
-  min-height:205px;
+.feature-card {
+  min-height: 200px;
 }
 
-.icon{
-  width:40px;
-  height:40px;
-  display:grid;
-  place-items:center;
-  margin-bottom:22px;
-  border-radius:11px;
-  border:1px solid rgba(255,255,255,.08);
-  background:linear-gradient(135deg,rgba(153,69,255,.18),rgba(20,241,149,.12));
-  color:var(--mint);
-  font-weight:900;
+.icon {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 21px;
+
+  border-radius: 11px;
+
+  color: var(--mint);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(153,69,255,.18),
+      rgba(20,241,149,.13)
+    );
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  font-weight: 900;
 }
 
-.card h3{
-  margin:0 0 9px;
-  font-size:1.08rem;
+.card h3 {
+  margin-bottom: 9px;
+
+  font-size: 1.08rem;
 }
 
-.card p{
-  margin:0;
-  color:#858e9b;
+.card p {
+  color: var(--muted);
+}
+
+/* NOTICE */
+
+.notice {
+  margin-top: 25px;
+
+  padding: 22px 24px;
+
+  border: 1px solid rgba(20,241,149,.18);
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(20,241,149,.055),
+      rgba(153,69,255,.045)
+    );
+
+  color: #aeb6c1;
+}
+
+.notice strong {
+  color: white;
 }
 
 /* TOKENOMICS */
 
-.tokenomics{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-  margin-top:35px;
+.token-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 15px;
+
+  margin-top: 35px;
 }
 
-.allocation{
-  padding:28px;
+.token-card {
+  padding: 27px;
+
+  border-radius: 17px;
+
+  border: 1px solid var(--line);
+
+  background:
+    rgba(11,14,18,.85);
 }
 
-.allocation-top{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  font-weight:850;
+.progress {
+  height: 12px;
+
+  margin: 16px 0 17px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #191e25;
 }
 
-.percentage{
-  color:var(--mint);
-}
+.progress span {
+  display: block;
 
-.bar{
-  height:11px;
-  margin:17px 0 13px;
-  border-radius:999px;
-  background:#1b2129;
-  overflow:hidden;
-}
+  height: 100%;
 
-.bar span{
-  display:block;
-  height:100%;
-  border-radius:999px;
-  background:linear-gradient(90deg,var(--violet),var(--blue),var(--mint));
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--violet),
+      var(--blue),
+      var(--mint)
+    );
 }
 
 /* ROADMAP */
 
-.roadmap{
-  display:grid;
-  gap:13px;
-  margin-top:35px;
+.roadmap {
+  display: grid;
+
+  gap: 13px;
+
+  margin-top: 38px;
 }
 
-.phase{
-  display:flex;
-  align-items:flex-start;
-  gap:18px;
-  padding:24px;
-  border:1px solid var(--line);
-  border-radius:16px;
-  background:rgba(11,15,20,.76);
+.roadmap-item {
+  display: flex;
+
+  gap: 18px;
+
+  align-items: flex-start;
+
+  padding: 24px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 16px;
+
+  background:
+    rgba(11,14,18,.75);
 }
 
-.phase-number{
-  width:42px;
-  height:42px;
-  display:grid;
-  place-items:center;
-  flex:none;
-  border-radius:12px;
-  color:#05070a;
-  font-weight:950;
-  background:linear-gradient(135deg,var(--violet),var(--mint));
+.roadmap-number {
+  width: 41px;
+  height: 41px;
+
+  flex: none;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 11px;
+
+  color: #050608;
+
+  font-weight: 950;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--violet),
+      var(--mint)
+    );
 }
 
-.phase-label{
-  color:var(--mint);
-  font-size:.68rem;
-  font-weight:850;
-  letter-spacing:.16em;
+.phase {
+  color: var(--mint);
+
+  font-size: .69rem;
+
+  font-weight: 900;
+
+  letter-spacing: .16em;
 }
 
-.phase h3{
-  margin:4px 0 5px;
-  font-size:1.08rem;
-}
-
-.phase p{
-  margin:0;
-  color:#818a97;
+.roadmap-item h3 {
+  margin: 3px 0 5px;
 }
 
 /* BRAND */
 
-.palette{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:30px;
+.palette {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 31px;
 }
 
-.swatch{
-  width:160px;
-  height:92px;
-  display:flex;
-  align-items:flex-end;
-  padding:13px;
-  border:1px solid var(--line);
-  border-radius:14px;
-  font-size:.7rem;
-  font-weight:850;
-  letter-spacing:.05em;
+.swatch {
+  width: 165px;
+  height: 92px;
+
+  display: flex;
+  align-items: flex-end;
+
+  padding: 13px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 14px;
+
+  font-size: .7rem;
+
+  font-weight: 850;
 }
 
-.obsidian{background:#05070a}
-.diamond-white{background:#f7f8fb;color:#05070a}
-.violet{background:#9945ff}
-.mint{background:#14f195;color:#05070a}
-.graphite{background:#151a21}
-
-/* NOTICE */
-
-.notice{
-  margin-top:25px;
-  padding:23px 25px;
-  border:1px solid rgba(20,241,149,.18);
-  border-radius:16px;
-  background:
-    linear-gradient(
-      120deg,
-      rgba(20,241,149,.05),
-      rgba(153,69,255,.05)
-    );
-  color:#9da6b3;
+.obsidian {
+  background: #050608;
 }
 
-.notice strong{
-  color:#fff;
+.diamond-white {
+  color: #050608;
+  background: #f7f8fa;
+}
+
+.violet {
+  background: #9945ff;
+}
+
+.mint {
+  color: #050608;
+  background: #14f195;
+}
+
+.graphite {
+  background: #10141a;
 }
 
 /* FOOTER */
 
-footer{
-  padding:55px 0 65px;
-  border-top:1px solid var(--line);
-  color:#6e7784;
-  font-size:.85rem;
+footer {
+  padding: 55px 0;
+
+  border-top: 1px solid var(--line);
+
+  color: #68717d;
+
+  font-size: .86rem;
 }
 
-.footer-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-}
+.footer-inner {
+  display: flex;
 
-.footer-brand{
-  color:#fff;
-  font-weight:850;
-  letter-spacing:.08em;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
 }
 
 /* MOBILE */
 
-@media(max-width:850px){
+@media (max-width: 850px) {
 
-  .container{
-    width:min(100% - 32px,1180px);
+  .nav-links {
+    display: none;
   }
 
-  .nav-links{
-    display:none;
+  .hero {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    padding:
+      85px 0
+      70px;
   }
 
-  .hero{
-    grid-template-columns:1fr;
-    gap:20px;
-    padding:70px 0 80px;
+  .visual {
+    min-height: 400px;
   }
 
-  .visual{
-    min-height:400px;
+  .cards-4 {
+    grid-template-columns:
+      repeat(2, 1fr);
   }
 
-  .cards{
-    grid-template-columns:1fr 1fr;
+  .features,
+  .token-grid {
+    grid-template-columns: 1fr;
   }
 
-  .feature-grid,
-  .tokenomics{
-    grid-template-columns:1fr;
-  }
-
-  .footer-inner{
-    flex-direction:column;
-    align-items:flex-start;
+  .section {
+    padding: 85px 0;
   }
 }
 
-@media(max-width:520px){
+@media (max-width: 520px) {
 
-  .container{
-    width:calc(100% - 28px);
+  .container {
+    width: min(
+      100% - 34px,
+      1180px
+    );
   }
 
-  nav{
-    height:72px;
+  nav {
+    height: 74px;
   }
 
-  .logo{
-    font-size:.72rem;
+  .hero {
+    padding-top: 70px;
   }
 
-  .logo-mark{
-    width:34px;
-    height:34px;
+  .hero h1 {
+    font-size: 4rem;
   }
 
-  h1{
-    font-size:clamp(3.65rem,17vw,5rem);
+  .hero-stats {
+    gap: 22px;
   }
 
-  .hero{
-    padding:55px 0 70px;
+  .cards-4 {
+    grid-template-columns: 1fr;
   }
 
-  .hero-stats{
-    gap:22px;
+  .diamond {
+    width: 235px;
+    height: 235px;
+
+    border-radius: 28px;
   }
 
-  .cards{
-    grid-template-columns:1fr;
+  .diamond-inner {
+    border-radius: 26px;
   }
 
-  .section{
-    padding:80px 0;
+  .dde {
+    font-size: 55px;
   }
 
-  .diamond{
-    width:245px;
-    height:245px;
-    border-radius:28px;
+  .glow {
+    width: 290px;
+    height: 290px;
   }
 
-  .diamond-inner{
-    border-radius:26px;
+  .swatch {
+    width: 100%;
   }
 
-  .dde{
-    font-size:58px;
-  }
-
-  .glow{
-    width:290px;
-    height:290px;
-  }
-
-  .swatch{
-    width:calc(50% - 6px);
+  .section {
+    padding: 75px 0;
   }
 }
 </style>
@@ -709,19 +968,29 @@ footer{
 
 <div class="container">
 
-<nav>
-  <a href="#" class="logo">
-    <span class="logo-mark"><span>DDE</span></span>
-    DIAMOND EXCHANGE
-  </a>
+<!-- NAVIGATION -->
 
-  <div class="nav-links">
-    <a href="#token">Token</a>
-    <a href="#ethos">Ethos</a>
-    <a href="#roadmap">Roadmap</a>
-    <a href="#brand">Brand</a>
-    <a href="#important" class="nav-button">Learn More</a>
-  </div>
+<nav>
+
+<a href="#" class="logo">
+
+<span class="logo-mark">
+<span class="logo-diamond">
+<span>DDE</span>
+</span>
+</span>
+
+<span>DIAMOND EXCHANGE</span>
+
+</a>
+
+<div class="nav-links">
+<a href="#token">Token</a>
+<a href="#ethos">Ethos</a>
+<a href="#roadmap">Roadmap</a>
+<a href="#brand">Brand</a>
+</div>
+
 </nav>
 
 
@@ -729,172 +998,233 @@ footer{
 
 <header class="hero">
 
-  <div class="hero-copy">
+<div>
 
-    <div class="badge">
-      <span class="dot"></span>
-      BUILT FOR SOLANA • $DDE
-    </div>
+<div class="badge">
+<span class="badge-dot"></span>
+BUILT FOR SOLANA • $DDE
+</div>
 
-    <h1>
-      <span class="gradient">DIAMOND</span><br>
-      <span class="gradient">EXCHANGE</span>
-    </h1>
+<h1>
+<span class="gradient-text">DIAMOND</span><br>
+<span class="gradient-text">EXCHANGE</span>
+</h1>
 
-    <h2>Fair token. Fair launch. Community first.</h2>
+<p class="hero-subtitle">
 
-    <p>
-      A next-generation meme project built around transparency,
-      strong branding and a community-first vision — inspired by
-      Solana's speed, culture and open ecosystem.
-    </p>
+<strong>Fair token. Fair launch. Community first.</strong>
 
-    <div class="actions">
-      <a href="#token" class="btn btn-primary">Explore DDE →</a>
-      <a href="#ethos" class="btn btn-secondary">Why DDE</a>
-    </div>
+<br>
 
-    <div class="hero-stats">
-      <div>
-        <span class="stat-label">Network</span>
-        <span class="stat-value">Solana</span>
-      </div>
+The meme exchange built to last — designed around Solana's speed, composability and community culture.
 
-      <div>
-        <span class="stat-label">Total Supply</span>
-        <span class="stat-value">1,000,000,000</span>
-      </div>
+</p>
 
-      <div>
-        <span class="stat-label">Creator Maximum</span>
-        <span class="stat-value">10%</span>
-      </div>
-    </div>
+<div class="actions">
 
-  </div>
+<a
+href="#token"
+class="button button-primary">
+Explore DDE →
+</a>
+
+<a
+href="#ethos"
+class="button button-secondary">
+Why DDE
+</a>
+
+</div>
+
+<div class="hero-stats">
+
+<div>
+<div class="stat-label">Network</div>
+<div class="stat-value">Solana</div>
+</div>
+
+<div>
+<div class="stat-label">Total Supply</div>
+<div class="stat-value">1,000,000,000</div>
+</div>
+
+<div>
+<div class="stat-label">Creator Maximum</div>
+<div class="stat-value">10%</div>
+</div>
+
+</div>
+
+</div>
 
 
-  <div class="visual">
+<div class="visual">
 
-    <div class="glow"></div>
+<div class="glow"></div>
 
-    <div class="diamond">
-      <div class="diamond-inner">
-        <div class="dde">DDE</div>
-        <div class="diamond-caption">
-          SOLANA • MEME EXCHANGE
-        </div>
-      </div>
-    </div>
+<div class="diamond">
 
-  </div>
+<div class="diamond-inner">
+
+<div class="dde">
+DDE
+</div>
+
+<div class="diamond-label">
+SOLANA • MEME EXCHANGE
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </header>
 
 
 <!-- TOKEN -->
 
-<section class="section" id="token">
+<section
+class="section"
+id="token">
 
-  <div class="section-heading">
-    <div class="eyebrow">01 — THE TOKEN</div>
+<div class="section-heading">
 
-    <h2>Simple. Clear. Verifiable.</h2>
+<h2>The Token</h2>
 
-    <p class="lead">
-      DDE is designed around straightforward tokenomics and
-      transparent communication. Official contract and wallet
-      information will only be published once deployment has
-      genuinely taken place and the details have been verified.
-    </p>
-  </div>
+<p class="lead">
+DDE is designed around simple, transparent tokenomics. The final Solana mint address and distribution addresses will be published only after genuine deployment and verification.
+</p>
+
+</div>
 
 
-  <div class="cards">
+<div class="cards-4">
 
-    <div class="card">
-      <div class="card-number">1B</div>
-      <div class="card-label">Total supply</div>
-    </div>
+<div class="card">
 
-    <div class="card">
-      <div class="card-number">10%</div>
-      <div class="card-label">Creator maximum</div>
-    </div>
+<div class="number">1B</div>
 
-    <div class="card">
-      <div class="card-number">90%</div>
-      <div class="card-label">Community allocation</div>
-    </div>
+<div class="muted">
+Total supply
+</div>
 
-    <div class="card">
-      <div class="card-number">0%</div>
-      <div class="card-label">Transfer tax</div>
-    </div>
+</div>
 
-  </div>
+
+<div class="card">
+
+<div class="number">10%</div>
+
+<div class="muted">
+Creator maximum
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="number">90%</div>
+
+<div class="muted">
+Community allocation
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="number">0%</div>
+
+<div class="muted">
+Transfer tax
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- ETHOS -->
 
-<section class="section" id="ethos">
+<section
+class="section"
+id="ethos">
 
-  <div class="section-heading">
-    <div class="eyebrow">02 — THE ETHOS</div>
+<div class="section-heading">
 
-    <h2>Fair by design.</h2>
+<h2>Fair by Design</h2>
 
-    <p class="lead">
-      The DDE brand is built around a simple principle:
-      the project should look ambitious without pretending
-      that things exist before they actually do.
-    </p>
-  </div>
+<p class="lead">
+The brand promise only matters if the architecture supports it.
+</p>
 
-
-  <div class="feature-grid">
-
-    <div class="card feature-card">
-      <div class="icon">◆</div>
-      <h3>Fixed supply</h3>
-      <p>
-        1,000,000,000 DDE is the planned total supply.
-        No post-launch minting is planned.
-      </p>
-    </div>
+</div>
 
 
-    <div class="card feature-card">
-      <div class="icon">10</div>
-      <h3>Creator cap</h3>
-      <p>
-        The creator allocation is limited to a maximum
-        of 100,000,000 DDE — 10% of total supply.
-      </p>
-    </div>
+<div class="features">
 
 
-    <div class="card feature-card">
-      <div class="icon">✓</div>
-      <h3>No fake promises</h3>
-      <p>
-        No invented exchange listings, partnerships,
-        volume figures, community numbers or wallet
-        addresses will be presented as official.
-      </p>
-    </div>
+<div class="card feature-card">
 
-  </div>
+<div class="icon">◆</div>
+
+<h3>
+Fixed Supply
+</h3>
+
+<p>
+1,000,000,000 DDE. No post-launch minting is planned.
+</p>
+
+</div>
 
 
-  <div class="notice">
-    <strong>Transparency first.</strong>
-    Official addresses, launch information and other
-    important project details should only be added when
-    they are real, verified and ready to be published.
-  </div>
+<div class="card feature-card">
+
+<div class="icon">10</div>
+
+<h3>
+Creator Cap
+</h3>
+
+<p>
+The creator allocation is limited to 100,000,000 DDE — 10% of total supply.
+</p>
+
+</div>
+
+
+<div class="card feature-card">
+
+<div class="icon">✓</div>
+
+<h3>
+No Gimmicks
+</h3>
+
+<p>
+No hidden transfer tax, blacklist or creator-controlled trading restrictions.
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="notice">
+
+<strong>Transparency rule:</strong>
+
+No fake exchange listings, fake volume, fake partnerships, invented community figures or unpublished wallet addresses will be presented as official.
+
+</div>
 
 </section>
 
@@ -903,254 +1233,290 @@ footer{
 
 <section class="section">
 
-  <div class="section-heading">
-    <div class="eyebrow">03 — TOKENOMICS</div>
+<div class="section-heading">
 
-    <h2>One simple allocation.</h2>
+<h2>Tokenomics</h2>
 
-    <p class="lead">
-      A deliberately straightforward structure:
-      10% creator maximum and 90% community allocation.
-    </p>
-  </div>
+<p class="lead">
+A deliberately simple allocation: 10% creator maximum, 90% community.
+</p>
 
-
-  <div class="tokenomics">
-
-    <div class="card allocation">
-
-      <div class="allocation-top">
-        <span>Creator</span>
-        <span class="percentage">10%</span>
-      </div>
-
-      <div class="bar">
-        <span style="width:10%"></span>
-      </div>
-
-      <p>
-        100,000,000 DDE maximum.
-      </p>
-
-    </div>
+</div>
 
 
-    <div class="card allocation">
+<div class="token-grid">
 
-      <div class="allocation-top">
-        <span>Community</span>
-        <span class="percentage">90%</span>
-      </div>
 
-      <div class="bar">
-        <span style="width:90%"></span>
-      </div>
+<div class="token-card">
 
-      <p>
-        900,000,000 DDE allocation.
-      </p>
+<strong>
+Creator — 10%
+</strong>
 
-    </div>
+<div class="progress">
+<span style="width:10%"></span>
+</div>
 
-  </div>
+<span class="muted">
+100,000,000 DDE maximum
+</span>
+
+</div>
+
+
+<div class="token-card">
+
+<strong>
+Community — 90%
+</strong>
+
+<div class="progress">
+<span style="width:90%"></span>
+</div>
+
+<span class="muted">
+900,000,000 DDE allocation
+</span>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- ROADMAP -->
 
-<section class="section" id="roadmap">
+<section
+class="section"
+id="roadmap">
 
-  <div class="section-heading">
-    <div class="eyebrow">04 — ROADMAP</div>
+<div class="section-heading">
 
-    <h2>Built to last.</h2>
+<h2>Built to Last</h2>
 
-    <p class="lead">
-      The goal isn't to create a one-week meme.
-      The goal is to build a recognisable, durable
-      community and ecosystem around DDE.
-    </p>
-  </div>
+<p class="lead">
+The goal isn't a one-week meme. It's a durable meme exchange ecosystem.
+</p>
 
-
-  <div class="roadmap">
-
-    <div class="phase">
-
-      <div class="phase-number">1</div>
-
-      <div>
-        <div class="phase-label">BUILD</div>
-        <h3>Solana-native foundation</h3>
-        <p>
-          Establish the project identity, token architecture,
-          documentation and transparent launch mechanics.
-        </p>
-      </div>
-
-    </div>
+</div>
 
 
-    <div class="phase">
-
-      <div class="phase-number">2</div>
-
-      <div>
-        <div class="phase-label">VERIFY</div>
-        <h3>Test and review</h3>
-        <p>
-          Test the system, review the launch structure and
-          verify important information before mainnet deployment.
-        </p>
-      </div>
-
-    </div>
+<div class="roadmap">
 
 
-    <div class="phase">
+<div class="roadmap-item">
 
-      <div class="phase-number">3</div>
+<div class="roadmap-number">
+1
+</div>
 
-      <div>
-        <div class="phase-label">LAUNCH</div>
-        <h3>Fair public launch</h3>
-        <p>
-          Publish genuine deployment information, official
-          addresses and transparent liquidity or distribution
-          details when ready.
-        </p>
-      </div>
+<div>
 
-    </div>
+<div class="phase">
+BUILD
+</div>
+
+<h3>
+Solana-native foundation
+</h3>
+
+<p class="muted">
+Token architecture, documentation and transparent launch mechanics.
+</p>
+
+</div>
+
+</div>
 
 
-    <div class="phase">
+<div class="roadmap-item">
 
-      <div class="phase-number">4</div>
+<div class="roadmap-number">
+2
+</div>
 
-      <div>
-        <div class="phase-label">EXCHANGE</div>
-        <h3>Build the ecosystem</h3>
-        <p>
-          Grow DDE into a recognisable community brand and
-          develop the wider Diamond Exchange vision over time.
-        </p>
-      </div>
+<div>
 
-    </div>
+<div class="phase">
+VERIFY
+</div>
 
-  </div>
+<h3>
+Test and review
+</h3>
+
+<p class="muted">
+Testing, security review and public verification before mainnet launch.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="roadmap-item">
+
+<div class="roadmap-number">
+3
+</div>
+
+<div>
+
+<div class="phase">
+LAUNCH
+</div>
+
+<h3>
+Fair public launch
+</h3>
+
+<p class="muted">
+Mainnet deployment, published addresses and transparent liquidity and distribution.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="roadmap-item">
+
+<div class="roadmap-number">
+4
+</div>
+
+<div>
+
+<div class="phase">
+EXCHANGE
+</div>
+
+<h3>
+Build the ecosystem
+</h3>
+
+<p class="muted">
+Turn DDE into the community currency of a long-standing meme exchange.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
 
 </section>
 
 
 <!-- BRAND -->
 
-<section class="section" id="brand">
+<section
+class="section"
+id="brand">
 
-  <div class="section-heading">
+<div class="section-heading">
 
-    <div class="eyebrow">05 — THE IDENTITY</div>
+<h2>
+The DDE Identity
+</h2>
 
-    <h2>Diamond, reimagined.</h2>
+<p class="lead">
+A premium Solana-inspired visual system: dark terminal surfaces, luminous gradients, sharp geometry and a restrained diamond motif.
+</p>
 
-    <p class="lead">
-      A premium visual identity combining dark terminal
-      surfaces, luminous gradients, sharp geometry and
-      a distinctive diamond motif. Futuristic without
-      losing the meme-native character of the project.
-    </p>
-
-  </div>
-
-
-  <div class="palette">
-
-    <div class="swatch obsidian">
-      OBSIDIAN<br>#05070A
-    </div>
-
-    <div class="swatch diamond-white">
-      DIAMOND<br>#F7F8FB
-    </div>
-
-    <div class="swatch violet">
-      ELECTRIC VIOLET<br>#9945FF
-    </div>
-
-    <div class="swatch mint">
-      NEON MINT<br>#14F195
-    </div>
-
-    <div class="swatch graphite">
-      GRAPHITE<br>#151A21
-    </div>
-
-  </div>
+</div>
 
 
-  <div class="card" style="margin-top:28px">
+<div class="palette">
 
-    <h3>Brand voice</h3>
+<div class="swatch obsidian">
+OBSIDIAN<br>
+#050608
+</div>
 
-    <p>
-      Confident. Transparent. Meme-native. Futuristic.
-      Long-term.
-    </p>
+<div class="swatch diamond-white">
+DIAMOND<br>
+#F7F8FA
+</div>
 
-    <p>
-      DDE should feel like a serious platform that
-      understands internet culture — not another generic
-      token landing page.
-    </p>
+<div class="swatch violet">
+ELECTRIC VIOLET<br>
+#9945FF
+</div>
 
-    <p>
-      <strong>FAIR TOKEN. FAIR LAUNCH. COMMUNITY FIRST.</strong>
-    </p>
+<div class="swatch mint">
+NEON MINT<br>
+#14F195
+</div>
 
-    <p>
-      <strong>
-        Diamond Exchange — the meme exchange built to last.
-      </strong>
-    </p>
+<div class="swatch graphite">
+GRAPHITE<br>
+#10141A
+</div>
 
-  </div>
+</div>
+
+
+<div class="card" style="margin-top:28px">
+
+<h3>
+Brand Voice
+</h3>
+
+<p>
+Confident. Transparent. Meme-native. Futuristic. Long-term.
+</p>
+
+<p style="margin-top:16px">
+
+DDE should feel like a serious platform that understands internet culture — not a generic token landing page.
+
+</p>
+
+<p style="margin-top:18px">
+
+<strong>
+FAIR TOKEN. FAIR LAUNCH. COMMUNITY FIRST.
+</strong>
+
+</p>
+
+<p style="margin-top:7px">
+
+<strong>
+Diamond Exchange — the meme exchange built to last.
+</strong>
+
+</p>
+
+</div>
 
 </section>
 
 
 <!-- IMPORTANT -->
 
-<section class="section" id="important">
+<section class="section">
 
-  <div class="section-heading">
+<div class="section-heading">
 
-    <div class="eyebrow">06 — IMPORTANT</div>
+<h2>
+Important
+</h2>
 
-    <h2>Transparency matters.</h2>
+</div>
 
-  </div>
+<div class="notice">
 
+DDE is a project in development.
 
-  <div class="notice">
+This website does not constitute financial advice, an offer of securities, or a promise of returns.
 
-    <strong>Diamond Exchange is a project in development.</strong>
+Do not send SOL or tokens to any address claiming to be official DDE until that address is published and verified through the official launch announcement.
 
-    <br><br>
-
-    This website is for project information and branding
-    purposes. It does not constitute financial advice,
-    an offer of securities, or a promise of returns.
-
-    <br><br>
-
-    Do not send SOL or tokens to any address claiming to
-    represent DDE until that address has been officially
-    published and independently verified through the
-    project's official launch information.
-
-  </div>
+</div>
 
 </section>
 
@@ -1159,21 +1525,17 @@ footer{
 
 <footer>
 
-  <div class="footer-inner">
+<div class="footer-inner">
 
-    <div class="footer-brand">
-      DIAMOND EXCHANGE • $DDE
-    </div>
+<div>
+© 2026 Diamond Exchange • $DDE
+</div>
 
-    <div>
-      FAIR TOKEN. FAIR LAUNCH. COMMUNITY FIRST.
-    </div>
+<div>
+FAIR TOKEN. FAIR LAUNCH. COMMUNITY FIRST.
+</div>
 
-  </div>
-
-  <div style="margin-top:18px">
-    © 2026 Diamond Exchange. All rights reserved.
-  </div>
+</div>
 
 </footer>
 

@@ -1,0 +1,29 @@
+{
+  "name": "Diamond Exchange",
+  "symbol": "DDE",
+  "description": "Diamond Exchange ($DDE) \u2014 Fair Token. Fair Launch. Community First.",
+  "image": "https://raw.githubusercontent.com/s7s5dp4w4s-crypto/Diamond-Exchange/main/dde-logo.svg",
+  "external_url": "https://s7s5dp4w4s-crypto.github.io/Diamond-Exchange/",
+  "attributes": [
+    {
+      "trait_type": "Network",
+      "value": "Solana"
+    },
+    {
+      "trait_type": "Total Supply",
+      "value": "1,000,000,000"
+    },
+    {
+      "trait_type": "Decimals",
+      "value": "9"
+    },
+    {
+      "trait_type": "Creator Maximum",
+      "value": "10%"
+    },
+    {
+      "trait_type": "Transfer Tax",
+      "value": "0%"
+    }
+  ]
+}
